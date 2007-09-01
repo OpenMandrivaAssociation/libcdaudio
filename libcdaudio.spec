@@ -27,13 +27,9 @@ libcdaudio is a library for controlling CD-ROM devices
 Summary:	Headers for developing programs that will use %{name}
 Group:		Development/C
 Requires:	%{libname} = %{version}
-%if "%{_lib}" != "lib"
 Provides:	%{name}-devel = %{version}-%{release}
-%endif
 Provides:	cdaudio-devel = %{version}-%{release}
 Obsoletes:      cdaudio-devel
-Provides:       %{mklibname cdaudio 1 -d} = %{version}
-Obsoletes:      %{mklibname cdaudio 1 -d}
 
 %description -n	%{libname}-devel
 This package contains the headers that programmers will need to develop 
