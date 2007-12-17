@@ -11,7 +11,6 @@ URL:		http://libcdaudio.sourceforge.net/
 Source0:	%{name}-%{version}.tar.bz2
 Source1:	%{name}-config
 Patch0:		%{name}-0.99.10.config.patch
-Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 libcdaudio is a library for controlling CD-ROM devices
