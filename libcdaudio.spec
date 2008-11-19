@@ -4,13 +4,15 @@
 Summary:	A library for controlling CD-ROM devices
 Name:		libcdaudio
 Version:	0.99.12
-Release:	%mkrel 6
+Release:	%mkrel 7
 Group:		Sound
-License:	GPL
+License:	LGPLv2+
 URL:		http://libcdaudio.sourceforge.net/
 Source0:	%{name}-%{version}.tar.bz2
 Source1:	%{name}-config
 Patch0:		%{name}-0.99.10.config.patch
+Patch1:		%{name}-0.99-CAN-2005-0706.patch
+Patch2:		%{name}-0.99.12-buffovfl.patch
 Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
@@ -39,6 +41,8 @@ applications which will use %{name}.
 
 %setup -q
 %patch0
+%patch1 -p1
+%patch2 -p0
 
 cp %{SOURCE1} cdserver
 
@@ -70,7 +74,7 @@ rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr (-,root,root)
-%doc README NEWS AUTHORS COPYING ChangeLog
+%doc README NEWS AUTHORS ChangeLog
 %{_sysconfdir}/cdserver
 %{_libdir}/lib*.so.*
 
