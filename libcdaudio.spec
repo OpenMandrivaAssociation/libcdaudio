@@ -1,10 +1,11 @@
 %define major 1
 %define libname %mklibname cdaudio %{major}
+%define develname %mklibname cdaudio -d
 
 Summary:	A library for controlling CD-ROM devices
 Name:		libcdaudio
 Version:	0.99.12
-Release:	%mkrel 7
+Release:	%mkrel 8
 Group:		Sound
 License:	LGPLv2+
 URL:		http://libcdaudio.sourceforge.net/
@@ -25,22 +26,22 @@ Group:		System/Libraries
 %description -n	%{libname}
 libcdaudio is a library for controlling CD-ROM devices
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Headers for developing programs that will use %{name}
 Group:		Development/C
 Requires:	%{libname} = %{version}
 Provides:	%{name}-devel = %{version}-%{release}
 Provides:	cdaudio-devel = %{version}-%{release}
-Obsoletes:      cdaudio-devel
+Obsoletes:      %{_lib}cdaudio1-devel
 
-%description -n	%{libname}-devel
+%description -n	%{develname}
 This package contains the headers that programmers will need to develop 
 applications which will use %{name}.
 
 %prep
 
 %setup -q
-%patch0
+%patch0 -p0
 %patch1 -p1
 %patch2 -p0
 
@@ -76,9 +77,9 @@ rm -rf %{buildroot}
 %defattr (-,root,root)
 %doc README NEWS AUTHORS ChangeLog
 %{_sysconfdir}/cdserver
-%{_libdir}/lib*.so.*
+%{_libdir}/lib*.so.%{major}*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr (-,root,root)
 %_bindir/libcdaudio-config
 %multiarch %_bindir/*/libcdaudio-config
