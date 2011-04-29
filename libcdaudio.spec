@@ -82,7 +82,7 @@ rm -rf %{buildroot}
 %files -n %{develname}
 %defattr (-,root,root)
 %_bindir/libcdaudio-config
-%multiarch %_bindir/*/libcdaudio-config
+%multiarch_bindir/libcdaudio-config
 %{_includedir}/*
 %{_libdir}/lib*.a
 %{_libdir}/lib*.la
