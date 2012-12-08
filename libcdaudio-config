@@ -1,0 +1,6 @@
+# CD Server configuration file
+# Best way of editing it is with cdcd
+
+ACCESS=REMOTE
+#PROXY=http://proxy.provider.com:8080/
+SERVER=http://www.freedb.org:80/cgi-bin/cddb.cgi CDDB
