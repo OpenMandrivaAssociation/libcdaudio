@@ -5,7 +5,7 @@
 Summary:	A library for controlling CD-ROM devices
 Name:		libcdaudio
 Version:	0.99.12
-Release:	24
+Release:	25
 Group:		Sound
 License:	LGPLv2+
 Url:		http://libcdaudio.sourceforge.net/
