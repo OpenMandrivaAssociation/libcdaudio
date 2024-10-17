@@ -8,7 +8,7 @@ Version:	0.99.12
 Release:	27
 Group:		Sound
 License:	LGPLv2+
-Url:		http://libcdaudio.sourceforge.net/
+Url:		https://libcdaudio.sourceforge.net/
 Source0:	%{name}-%{version}.tar.bz2
 Source1:	%{name}-config
 Patch0:		%{name}-0.99.10.config.patch
